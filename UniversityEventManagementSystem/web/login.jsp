@@ -30,25 +30,26 @@
     Author     : HP
 --%>
 
-
 <%@page import="app.classes.DbConnector"%>
 <%@page import="app.classes.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+ 
     String username = request.getParameter("username");
     String password = request.getParameter("password");
+   
 
-    User user = new User(username, password);
+    User user = new User( username, password);
     if (user.login(DbConnector.getConnection())) {
-        String userRole = user.getRole();
-        if ("admin".equals(userRole)) {
-            response.sendRedirect("../Admin/admin_dashboard.jsp");
-        } else {
-            response.sendRedirect("../Student/student_dashboard.jsp");
+        String userRole=user.getRole();
+        if("admin".equals(userRole)){
+            response.sendRedirect("/vithusan/Admin/adminDashboard.jsp");
         }
+        else{
+            response.sendRedirect("/vithusan/Student/student_dashboard.jsp");
+        }
+        
     } else {
         response.sendRedirect("index.jsp?s=0");
     }
 %>
-
-

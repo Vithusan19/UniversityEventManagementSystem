@@ -25,11 +25,10 @@
                     out.println(message);
                 }
             %>
-           
             <form action="login.jsp" method="post">
                 <input type="text" class="form-control" placeholder="Enter username" name="username" required/><br />
                 <input type="password" class="form-control" placeholder="Enter password" name="password" required/><br />
-                <button type="submit" class="btn btn-primary" style="display: flex; margin: 0px auto;">Login here</button>
+                <button type="submit" class="btn btn-primary">Login here</button>
             </form>
         </div>
     </div>
