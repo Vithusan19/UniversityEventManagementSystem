@@ -2,7 +2,7 @@ package app.classes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class Event {
     private int event_id;
