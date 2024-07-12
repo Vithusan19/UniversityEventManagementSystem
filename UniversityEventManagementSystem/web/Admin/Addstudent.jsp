@@ -1,17 +1,24 @@
 <%-- 
     Document   : Addstudent
-    Created on : 12 Jul 2024, 12:57:56
-    Author     : vithu
+    Created on : Jul 18, 2023, 5:16:17 AM
+    Author     : HP
 --%>
 
+<%@page import="app.classes.DbConnector"%>
+<%@page import="app.classes.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+<%
+    String firstname = request.getParameter("firstname");
+    String lastname = request.getParameter("lastname");
+    String username = request.getParameter("username");
+    String email = request.getParameter("email");
+    String role = "student";
+    String password = request.getParameter("password");
+
+    User user = new User(firstname, lastname, username, email, role, password);
+    if (user.AddStudent(DbConnector.getConnection())) {
+        response.sendRedirect("AddstudentPage.jsp?s=1");
+    } else {
+        response.sendRedirect("AddstudentPage.jsp?s=0");
+    }
+%>

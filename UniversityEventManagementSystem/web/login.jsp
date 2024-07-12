@@ -19,5 +19,6 @@
         }
     } else {
         response.sendRedirect("index.jsp?s=0");
-    }
+    }    }
+
 %>
