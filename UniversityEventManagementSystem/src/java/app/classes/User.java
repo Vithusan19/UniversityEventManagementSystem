@@ -126,7 +126,7 @@ public class User {
         this.username = username;
         this.email = email;
         this.role = Userrole;
-        this.password = password;
+        this.password = MD5.getMd5(password);
     }
 
     public int getId() {

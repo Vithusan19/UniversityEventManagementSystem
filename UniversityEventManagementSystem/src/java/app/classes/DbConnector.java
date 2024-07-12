@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 
 public class DbConnector {
-    final static String URL = "jdbc:mysql://localhost:3308/UEMS";
+    final static String URL = "jdbc:mysql://localhost:3306/uems";
     final static String USER = "root"; //your username
     final static String PASSWORD = ""; // your password
     final static String DRIVER = "com.mysql.jdbc.Driver";
