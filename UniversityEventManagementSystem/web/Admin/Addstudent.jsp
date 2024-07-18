@@ -12,13 +12,14 @@
     String lastname = request.getParameter("lastname");
     String username = request.getParameter("username");
     String email = request.getParameter("email");
+    String course = request.getParameter("course");
     String role = "student";
     String password = request.getParameter("password");
 
-    User user = new User(firstname, lastname, username, email, role, password);
+    User user = new User(firstname, lastname, username, email,course,role, password);
     if (user.AddStudent(DbConnector.getConnection())) {
-        response.sendRedirect("AddstudentPage.jsp?s=1");
+        response.sendRedirect("displayuserpage.jsp?s=1");
     } else {
-        response.sendRedirect("AddstudentPage.jsp?s=0");
+        response.sendRedirect("displayuserpage.jsp?s=0");
     }
 %>

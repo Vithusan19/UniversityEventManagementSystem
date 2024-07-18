@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+}
+
+.event-search {
+    width: 30%;
+    border: solid rgb(128, 127, 127) 1px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 20px auto;
+}
+
+.event-search input {
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+.event-search input:focus {
+    outline: none;
+}
+
+/* footer */
+.footer {
+    margin-top: 20px;
+    background-color: rgb(2, 17, 37);
+    color: white;
+    padding: 40px;
+}
+
+/* nav */
+.navbar {
+    height: 5rem;
+    width: 100vw;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin-bottom: 10px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dropdown-menu {
+    right: 0;
+    left: auto;
+    color: black;
+}
+
+.rounded-circle {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.navbar-link a {
+    text-decoration: none;
+    color: rgb(2, 17, 37);
+}
+
+.navbar-link a:hover {
+    text-decoration: underline;
+    color: rgb(2, 17, 37);
+}
+
+.navbar-menu {
+    display: none;
+}
+.usericon
+{
+    width: 30px;
+    height: 30px;
+}
+/* profile */
+.profile-container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    max-width: 70vw;
+    margin: 60px auto;
+    margin-bottom: 120px;
+    margin-top: 140px;
+}
+.profile-image {
+    flex: 1;
+    text-align: center;
+}
+.profile-image img {
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+.profile-details {
+    flex: 2;
+    margin-left: 20px;
+}
+.profile-details h3 {
+    margin-top: 0;
+}
+.profile-details button {
+    margin: 10px 0;
+}
+#changePasswordForm {
+    display: none;
+}
+
+.side-nav {
+    background-color: rgb(2, 17, 37);
+    width: 50%;
+    height: 200px;
+    position: absolute;
+    left: -60%;
+    padding: 20px;
+    color: white;
+    transition: 2s;
+}
+
+.sidenavbar-link {
+    margin-bottom: 30px;
+}
+
+.sidenavbar-links a {
+    margin-bottom: 30px;
+    color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar-menu {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+}

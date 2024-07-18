@@ -2,7 +2,10 @@ package app.classes;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Event {
     private int event_id;
@@ -125,4 +128,27 @@ public class Event {
             return pstmt.executeUpdate() > 0;
         }
     }
+     public static List<Event> getAllEvents(Connection con) throws SQLException {
+        String query = "SELECT * FROM event";
+        List<Event> events = new ArrayList<>();
+        
+        try (PreparedStatement pstmt = con.prepareStatement(query);
+             ResultSet rs = pstmt.executeQuery()) {
+            while (rs.next()) {
+                Event event = new Event(
+                    rs.getInt("event_id"),
+                    rs.getString("event_name"),
+                    rs.getString("date"),
+                    rs.getString("time"),
+                    rs.getString("place"),
+                    rs.getString("link"),
+                    rs.getString("description"),
+                    rs.getString("organizer")
+                );
+                events.add(event);
+            }
+        }
+        return events;
+    }
 }
+

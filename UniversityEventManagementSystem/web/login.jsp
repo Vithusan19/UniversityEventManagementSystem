@@ -42,11 +42,21 @@
     User user = new User( username, password);
     if (user.login(DbConnector.getConnection())) {
         String userRole=user.getRole();
+        String firstname=user.getFirstname();
+        String lastname=user.getLastname();
         if("admin".equals(userRole)){
-            response.sendRedirect("/vithusan/Admin/adminDashboard.jsp");
+            session.setAttribute("username", username);
+            session.setAttribute("firstname", firstname);
+            session.setAttribute("lastname", lastname);
+            session.setAttribute("userrole", userRole);
+            response.sendRedirect("/WebApplication2/Admin/adminDashboard.jsp");
         }
         else{
-            response.sendRedirect("/vithusan/Student/student_dashboard.jsp");
+            session.setAttribute("userrole", userRole);
+             session.setAttribute("username", username);
+            session.setAttribute("firstname", firstname);
+            session.setAttribute("lastname", lastname);
+            response.sendRedirect("/WebApplication2/Student/student_dashboard.jsp");
         }
         
     } else {

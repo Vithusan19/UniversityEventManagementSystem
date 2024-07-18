@@ -7,20 +7,20 @@
 <%@page import="app.classes.Event"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    String eventName = request.getParameter("event_name");
-    String date = request.getParameter("date");
-    String time = request.getParameter("time");
-    String place = request.getParameter("place");
-    String link = request.getParameter("link");
-    String description = request.getParameter("description");
-    String organizer = request.getParameter("organizer");
+    String eventName = request.getParameter("eventName");
+    String date = request.getParameter("eventDate");
+    String time = request.getParameter("eventTime");
+    String place = request.getParameter("eventPlace");
+    String link = request.getParameter("eventLink");
+    String description = request.getParameter("eventDescription");
+    String organizer = request.getParameter("eventOrganizer");
 
     // Assuming event_id is auto-incremented and not provided by user
     Event event = new Event(0, eventName, date, time, place, link, description, organizer);
 
     if(event.addEvent(DbConnector.getConnection())) {
-        response.sendRedirect("add_event.jsp?s=1");
+        response.sendRedirect("adminDashboard.jsp?s=1");
     } else {
-        response.sendRedirect("add_event.jsp?s=0");
+        response.sendRedirect("adminDashboard.jsp?s=0");
     }
 %>

@@ -9,12 +9,12 @@ import java.util.logging.Logger;
 
 
 public class DbConnector {
-    final static String URL = "jdbc:mysql://localhost:3306/uems";
+    final static String URL = "jdbc:mysql://localhost:3308/uems";
     final static String USER = "root"; //your username
     final static String PASSWORD = ""; // your password
-    final static String DRIVER = "com.mysql.jdbc.Driver";
+//    final static String DRIVER = "com.mysql.jdbc.Driver";
 //    mac
-   // final static String DRIVER ="com.mysql.cj.jdbc.Driver";
+    final static String DRIVER ="com.mysql.cj.jdbc.Driver";
     
     public static Connection getConnection(){
     Connection con = null;
